@@ -12,6 +12,7 @@ function App() {
   const loginPassword = useRef("");
 
   const [userData, setUserData] = useState(null);
+  const serverURL = "https://murmuring-meadow-05892.herokuapp.com/";
 
   function register(event) {
     event.preventDefault();
@@ -21,7 +22,7 @@ function App() {
         username: registerUsername.current.value,
         password: registerPassword.current.value,
       },
-      url: "https://arcane-wave-70146.herokuapp.com/register",
+      url: serverURL + "register",
       withCredentials: true,
     }).then((res) => {
       console.log(res.data);
@@ -37,7 +38,7 @@ function App() {
         username: loginUsername.current.value,
         password: loginPassword.current.value,
       },
-      url: "https://arcane-wave-70146.herokuapp.com/login",
+      url: serverURL + "login",
       withCredentials: true,
     }).then((res) => {
       console.log(res.data);
@@ -49,7 +50,7 @@ function App() {
     event.preventDefault();
     axios({
       method: "GET",
-      url: "https://arcane-wave-70146.herokuapp.com/user",
+      url: serverURL + "user",
       withCredentials: true,
     })
       .then((res) => setUserData(res.data))
