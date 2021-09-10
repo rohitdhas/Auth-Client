@@ -1,2 +1,1 @@
-/ /index.html
 /api/* https://murmuring-meadow-05892.herokuapp.com/api/:splat 200
