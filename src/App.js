@@ -12,7 +12,7 @@ function App() {
   const loginPassword = useRef("");
 
   const [userData, setUserData] = useState(null);
-  const serverURL = "https://murmuring-meadow-05892.herokuapp.com/";
+  const serverURL = "https://authclient.netlify.app/api/";
 
   function register(event) {
     event.preventDefault();
@@ -60,7 +60,7 @@ function App() {
   function hit() {
     axios({
       method: "GET",
-      url: "https://arcane-wave-70146.herokuapp.com/hit",
+      url: serverURL + "hit",
       withCredentials: true,
     })
       .then((res) => setUserData(res.data))
