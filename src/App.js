@@ -12,7 +12,7 @@ function App() {
   const loginPassword = useRef("");
 
   const [userData, setUserData] = useState(null);
-  const serverURL = "https://authclient.netlify.app/api/";
+  const serverURL = "/api/";
 
   function register(event) {
     event.preventDefault();
